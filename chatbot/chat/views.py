@@ -33,8 +33,7 @@ from google.cloud import translate
 import os
 import openai
 
-API_KEY = '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'
-openai.api_key = API_KEY
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
 # 구글 번역 함수 선언
