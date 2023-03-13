@@ -9,7 +9,7 @@ response = openai.Completion.create(
     model = 'text-davinci-003',
     max_tokens=1000,
     temperature=0.9,
-    n=3,
+    n=1,
     stop=['---']
 )
 #print(response)
