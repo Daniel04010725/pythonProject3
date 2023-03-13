@@ -36,7 +36,7 @@ import os
 import openai
 
 # stt를 위한 API 호출
-from . import stt
+#from . import stt
 
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
