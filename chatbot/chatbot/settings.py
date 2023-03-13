@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8mo2kb2zqf_t=g1zgn*cdx7rv7rqmvk1xy%h0g=rs#r!4(pl3(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # 외부 IP 설정 변경
 
 
 # Application definition
