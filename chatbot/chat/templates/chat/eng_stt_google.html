@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+        background-color: #f2f2f2;
+        font-family: "Open Sans", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+        margin-top: 30px;
+        font-size: 48px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+      }
+      #chatbox {
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        height: 300px;
+        overflow-y: scroll;
+        margin: 30px auto;
+        background-color: #fff;
+        color: #333;
+        font-size: 16px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        width: calc(80% - 40px);
+      }
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        width: 80%;
+      }
+
+      button[type="submit"] {
+        background-color: #0080ff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        padding: 15px;
+        font-size: 18px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        transition: background-color 0.3s ease-in-out;
+      }
+      button[type="submit"]:hover {
+        background-color: #0066cc;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-top: 10px;
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        width: calc(100% - 0px);
+      }
+    </style>
+</head>
+  <body>
+    <h1>Voice</h1>
+    <div id="chatbox">
+      {% if chat_history %}
+        {{ chat_history|safe }}
+      {% endif %}
+    </div>
+    <form method="POST">
+      {% csrf_token %}
+      <button type="submit">Voice</button>
+      <input type="hidden" name="chat_history" value="{{ chat_history }}">
+    </form>
+
+    <h2>2016-2023. Mintpot co., Ltd. All rights reserved</h2>
+
+    <script>
+    chatbox.scrollTop = chatbox.scrollHeight;
+    </script>
+
+
+  </body>
+</html>
